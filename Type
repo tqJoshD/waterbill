@@ -1,0 +1,23 @@
+import tkinter as tk
+from tkinter import ttk
+
+
+#Total_cost = the total amount in peso the users gonna pay
+#Total_cm = the cubic meter
+
+root = tk.Tk()
+root.title("Type of Usage;")
+
+# Create combobox
+Type_Usage = ttk.Combobox(root, values=["Commercial", "Industrial", "Governmental", "Residential"])
+Type_Usage.pack(pady=10)
+
+def calculate_cost():
+    usage_type = type_usage.get()
+    try:
+        if usage_type in ["Residential", "Governmental"]:
+            Total_cost = total_cm * 24.4
+        else:
+            Total_cost = total_cm * 48.8
+
+root.mainloop()
